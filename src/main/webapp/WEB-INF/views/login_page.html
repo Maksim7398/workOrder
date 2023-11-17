@@ -1,0 +1,134 @@
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>
+        Admin authorization
+    </title>
+    <style>
+        #login_form{
+            position:fixed;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background:url(https://klike.net/uploads/posts/2022-11/1667546213_3-60.jpg);
+            z-index: 10;
+            overflow: auto;
+        }
+        .login_item{
+            margin-bottom: 10px;
+        }
+        img.background {
+            height: 500px;
+            width: 500px;
+            position: center;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+
+<div id="login_form">
+    <form method="post" th:action="@{/login/auth}" th:object="${loginForm}">
+        <img class="background" th:src="@{https://img.freepik.com/free-vector/tablet-login-concept-illustration_114360-7863.jpg?w=740&t=st=1688583519~exp=1688584119~hmac=82471204e098e3a062f29522c11c09715e97abfbb25704042ad037709a1bbd73}">
+        <input class="login_item" type="text" placeholder="enter username" th:field="*{username}">
+        <br>
+        <input class="login_item" type="password" placeholder="password" th:field="*{password}">
+        <br>
+        <input class="login_item" type="submit" value="login">
+        <br>
+    </form>
+
+
+
+</div>
+</body>
+</html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>
+        Admin authorization
+    </title>
+    <style>
+        #login_form{
+            position:fixed;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background:url(https://klike.net/uploads/posts/2022-11/1667546213_3-60.jpg);
+            z-index: 10;
+            overflow: auto;
+        }
+        .login_item{
+            margin-bottom: 10px;
+        }
+        form{
+            top:200px;
+            position: relative;
+            left: 350px ;
+        }
+        input {
+            left: 20px;
+            display: block;
+            width: 200px;
+            height: calc(2.25rem + 2px);
+
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #212529;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #bdbdbd;
+            border-radius: 0.25rem;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+        button {
+            background-color: red;
+            box-shadow: 0 5px 0 darkred;
+            color: white;
+            padding: 1em 1.5em;
+            position: relative;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        button:hover {
+            background-color: #ce0606;
+            cursor: pointer;
+        }
+
+        button:active {
+            box-shadow: none;
+            top: 5px;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+
+<div id="login_form">
+    <form method="post" th:action="@{/login/auth}" th:object="${loginForm}">
+
+        <input class="login_item" type="text" placeholder="enter username" th:field="*{username}">
+        <br>
+        <input class="login_item" type="password" placeholder="password" th:field="*{password}">
+        <br>
+        <button class="login_item" type="submit" value="login">LOGIN</button>
+        <br>
+    </form>
+
+
+
+</div>
+</body>
+</html>

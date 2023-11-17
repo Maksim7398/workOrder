@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<body>
+<div id="client_save" th:fragment="divFragment">
+
+  <p class="table1">
+
+    <strong>Данные владельца</strong>
+
+
+  </p>
+
+
+  <form class="save" method="post" th:action="@{/work-order/save}" th:object="${client}">
+
+    <table>
+      <tr><td>
+
+        <input type="text" placeholder="ФИО" th:field="*{fio}">
+
+      </td>
+        <td>
+
+          <input type="text" placeholder="Номер телефона" th:field="*{numberPhone}">
+
+        </td></tr>
+      <tr>   <td>
+
+        <input type="text" placeholder="Модель машины" th:field="*{carModel}">
+
+      </td>
+        <td>
+          <input type="text" placeholder="Год машины" th:field="*{yearCar}">
+        </td></tr>
+
+      <tr> <td>
+        <input type="text" placeholder="Гос номер" th:field="*{numberCar}">
+      </td>
+        <td>
+          <input type="text" placeholder="VIN" th:field="*{vinCode}">
+        </td>
+      <tr>  <td>
+        <input type="text" placeholder="Пробег" th:field="*{mileage}">
+      </td>
+
+        <td>
+
+          <button  type="submit"  placeholder="save">
+            Сохранить
+          </button>
+        </td>
+
+      </tr>
+      </tr>
+
+
+
+    </table>
+  </form>
+  <br>
+  <form class="save" method="get" th:action="@{/work-order/saveClientToNumber}" th:object = "${client}">
+    <table>
+      <tr>
+        <td>
+          <input type="text" placeholder="Введите номер автомобиля" th:field="*{numberCar}">
+        </td>
+        <td>
+          <button type="submit" value="Найти и сгенерировать по номеру">
+            Найти по номеру
+          </button>
+        </td>
+      </tr>
+    </table>
+  </form>
+  <img src="http://habrastorage.org/files/7cd/799/944/7cd79994458f4fc6a9345aa7444650a3.png">
+
+
+  <table id="client_list" >
+    <tr>
+      <td>id</td>
+      <br>
+      <td>ФИО</td>
+      <br>
+      <td>Номер телефона</td>
+      <br>
+      <td>Модель машины</td>
+      <br>
+      <td>Год машины</td>
+      <br>
+      <td>Номер машины</td>
+      <br>
+      <td>VIN</td>
+      <br>
+      <td>Пробег</td>
+    </tr>
+    <table id="cli" th:each="clients : ${clientList}">
+      <tr  th:each="client : ${clients.value}">
+        <td th:text="${client.id}"></td>
+        <td th:text="${client.fio}"></td>
+        <td th:text="${client.numberPhone}"></td>
+        <td th:text="${client.carModel}"></td>
+        <td th:text="${client.yearCar}"></td>
+        <td th:text="${client.numberCar}"></td>
+        <td th:text="${client.vinCode}"></td>
+        <td th:text="${client.mileage}"></td>
+      </tr>
+    </table>
+  </table>
+</div>
+</body>
+</html>

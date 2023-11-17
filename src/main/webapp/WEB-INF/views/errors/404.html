@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Custom 404</title>
+</head>
+<style>
+    p{
+        color: red;
+        animation: linear;
+    }
+</style>
+<body>
+<h1>Custom Client number car 404 Page (Not Found)</h1>
+<p th:text="${errorMessage}"> </p>
+<a href="/Work_order_war_exploded/work-order/client_table"> Вернутся назад </a>
+</body>
+</html>

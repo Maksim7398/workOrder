@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Заказ-наряд</title>
+    <style>
+
+
+
+
+        img {
+            margin-left: 500px;
+            margin-top: 30px;
+            height: 90px;
+            width: 90px;
+            -webkit-animation-name: rotation;
+            -webkit-animation-duration: 10s;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-timing-function: linear;
+            -moz-animation-name: rotation;
+            -moz-animation-duration: 10s;
+            -moz-animation-iteration-count: infinite;
+            -moz-animation-timing-function: linear;
+            -o-animation-name: rotation;
+            -o-animation-duration: 10s;
+            -o-animation-iteration-count: infinite;
+            -o-animation-timing-function: linear;
+            animation-name: rotation;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        @-webkit-keyframes rotation {
+            0% {-webkit-transform:rotate(0deg);
+                -moz-transform:rotate(0deg);
+                -o-transform:rotate(0deg);
+                transform:rotate(0deg);}
+            100% {-webkit-transform:rotate(360deg);
+                -moz-transform:rotate(360deg);
+                -o-transform:rotate(360deg);
+                transform:rotate(360deg);}
+        }
+        @-moz-keyframes rotation {
+            0% {-webkit-transform:rotate(0deg);
+                -moz-transform:rotate(0deg);
+                -o-transform:rotate(0deg);
+                transform:rotate(0deg);}
+            100% {-webkit-transform:rotate(360deg);
+                -moz-transform:rotate(360deg);
+                -o-transform:rotate(360deg);
+                transform:rotate(360deg);}
+        }
+        @-o-keyframes rotation {
+            0% {-webkit-transform:rotate(0deg);
+                -moz-transform:rotate(0deg);
+                -o-transform:rotate(0deg);
+                transform:rotate(0deg);}
+            100% {-webkit-transform:rotate(360deg);
+                -moz-transform:rotate(360deg);
+                -o-transform:rotate(360deg);
+                transform:rotate(360deg);}
+        }
+        @keyframes rotation {
+            0% {-webkit-transform:rotate(0deg);
+                -moz-transform:rotate(0deg);
+                -o-transform:rotate(0deg);
+                transform:rotate(0deg);}
+            100% {-webkit-transform:rotate(360deg);
+                -moz-transform:rotate(720deg);
+                -o-transform:rotate(360deg);
+                transform:rotate(360deg);}
+        }
+
+
+        #client_save {
+
+            position:absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background:url(https://klike.net/uploads/posts/2022-11/1667546213_3-60.jpg);
+            z-index: 10;
+            overflow: auto;
+
+
+        }
+        .save{
+            position: relative;
+            left: 350px ;
+        }
+
+
+
+
+
+        .table1 {
+            position: relative;
+            left: 350px ;
+            font-family: "Myriad Pro", "sans-serif";
+            font-size: 40pt;
+            color: #BE2D0F;
+            text-decoration-style: double;
+
+
+        }
+
+
+        #client_list{
+            column-width: auto;
+            font-style: italic;
+            font-weight: bolder;
+            font-size: larger;
+
+        }
+        #cli{
+            font-size: larger;
+            background-repeat: round;
+
+        }
+
+        td {
+            width: 300px;
+            font-family: "Myriad Pro", "sans-serif";
+            border-bottom: 1px solid #111111;
+            color: #f5eae8;
+
+            text-decoration-style: double;
+
+
+        }
+
+        input {
+            left: 10px;
+            display: block;
+            width: 90%;
+            height: calc(2.25rem + 2px);
+            padding: 0.375rem 0.75rem;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #212529;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #bdbdbd;
+            border-radius: 0.25rem;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+        button {
+            background-color: red;
+            box-shadow: 0 5px 0 darkred;
+            color: white;
+            padding: 1em 1.5em;
+            position: relative;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        button:hover {
+            background-color: #ce0606;
+            cursor: pointer;
+        }
+
+        button:active {
+            box-shadow: none;
+            top: 5px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div th:replace="~{fragment/div_fragment::divFragment}"></div>
+</body>
+</html>
